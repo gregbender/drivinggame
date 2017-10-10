@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Michael (RIT) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="world">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="comment" type="xs:string" minOccurs="0"/>
+				<xs:element name="entities">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="buildings">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="building" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="type" type="xs:int" use="required"/>
+														<xs:attribute name="x" type="xs:int" use="required"/>
+														<xs:attribute name="y" type="xs:int" use="required"/>
+														<xs:attribute name="orientation" type="xs:int" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="cars">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="car" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="type" type="xs:int" use="required"/>
+														<xs:attribute name="x" type="xs:int" use="required"/>
+														<xs:attribute name="y" type="xs:int" use="required"/>
+														<xs:attribute name="orientation" type="xs:int" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="roads">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="road" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="type" type="xs:int" use="required"/>
+														<xs:attribute name="x" type="xs:int" use="required"/>
+														<xs:attribute name="y" type="xs:int" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="rendering">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="distance">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="rendering_distance" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fog">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="viscosity" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="physics">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="gravity" type="xs:int" use="required"/>
+											<xs:attribute name="friction" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="time">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="time_of_day" type="xs:int" use="optional" default="12"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="heights">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="height" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="x" type="xs:int" use="required"/>
+											<xs:attribute name="y" type="xs:int" use="required"/>
+											<xs:attribute name="span" type="xs:int" use="optional"/>
+											<xs:attribute name="orientation" type="xs:int" use="required"/>
+											<xs:attribute name="height" type="xs:int" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="x" type="xs:int" use="required"/>
+			<xs:attribute name="y" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
