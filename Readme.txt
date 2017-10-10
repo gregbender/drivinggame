@@ -1,3 +1,7 @@
+Legacy Project (2002) - My Computer Graphics 2 class consisted of a ten-week project and a research paper. We could pretty much do whatever we wonder, so myself and another person (Mike Krauklis). At this point in time Grand Theft Auto 3 was a popular game, so of course we decided to make a driving game... I think we set our sites a little to high, and the final outcome was slightly disappointing. Nevertheless we learned a lot about game design, and more specifically how not to do things in the future. Next time we we definitely build our 3D world using octrees or something similar that is more manageable. This 3D world ran pretty slow on any system less than a one-gigahertz, a more streamlined and more optimized design is the goal for the next project.
+
+------------------------------------
+
 3D Driving World
 Mike Krauklis
 Greg Bender
